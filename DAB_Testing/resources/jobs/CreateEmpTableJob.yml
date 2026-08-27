@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    DAB_Testing_job:
+      name: DAB_Testing_job
+      tasks:
+        - task_key: Create_Emp_Table
+          notebook_task:
+            notebook_path: ../notebook/createemptable.ipynb
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

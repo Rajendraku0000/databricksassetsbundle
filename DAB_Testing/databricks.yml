@@ -1,0 +1,24 @@
+# This is a Declarative Automation Bundle definition for DAB_Testing.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: DAB_Testing
+  uuid: 2e85e874-b945-42df-b30e-7fd302856091
+
+include:
+  - resources/*.yml
+  - src/*.yml
+  - src/env/*.yml
+  - resources/jobs/*.yml
+  - resources/pipelin/*.yml
+
+targets:
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    # - Any job schedules and triggers are paused by default.
+    # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
+    mode: development
+    default: true
+    workspace:
+      host: http://127.0.0.1:7073
